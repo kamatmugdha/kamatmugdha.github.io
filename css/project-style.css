@@ -1,0 +1,113 @@
+/* utility classes */
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%; 
+    height: auto;
+}
+
+.project-description ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+.center-img-grp {
+    text-align: center;
+}
+
+.small-img {
+    width: 200px;
+    height: auto;
+}
+
+.medium-img {
+    width: 300px;
+    height: auto;
+}
+
+.medlarge-img {
+    width: 375px;
+    height: auto;
+}
+
+.large-img {
+    width: 450px;
+    height: auto;
+}
+
+.xlarge-img {
+    width: 550px;
+    height: auto;
+}
+
+/* Navbar */
+
+#navbar {
+    background: #333;
+}
+
+#navbar a {
+    color: white;
+}
+
+/* Project */
+
+.project-info {
+    padding-top: 100px;
+}
+
+.project-title, .project-title a {
+    font-style: italic;
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.project-description {
+    margin-top: 30px;
+}
+
+.project-description h3,h4 {
+    margin-top: 20px;
+}
+
+.project-description h5 {
+    margin-top: 15px;
+}
+
+.project-description p {
+    text-align: justify;
+}
+
+.project-description p, img {
+    margin-top: 10px;
+    color: #333;
+}
+
+/* Diamonds Project */
+.half-half {
+    display: flex;
+    justify-content: center;
+}
+
+.half-half:first-child {
+}
+
+.half-half:last-child {
+}
+
+@media (max-width: 790px) {
+    .half-half {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%; 
+        height: auto;
+    }
+}

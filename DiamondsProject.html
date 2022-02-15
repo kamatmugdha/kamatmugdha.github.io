@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mugdha Kamat | Data Analyst | Portfolio Website">
+    <meta name="keywords" content="data analyst,nyc,new york">
+    <script src="https://kit.fontawesome.com/7aecf68a22.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/project-style.css">
+    <title>Mugdha Kamat | Diamonds In-Depth Analysis</title>
+</head>
+
+<body>
+    <header>
+        <div id="nav-container">
+            <div class="container">
+                <nav class="navbar">
+                    <a href="index.html" class="nav-branding">Mugdha Kamat</a>
+                    
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="index.html#timeline" class="nav-link">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.html#skills" class="nav-link">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.html#projects" class="nav-link">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.html#contact-me" class="nav-link">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./docs/Mugdha Kamat Resume.pdf" class="nav-link" target="_blank"><i class="fas fa-download"></i> Resume</a>
+                        </li>
+                    </ul>
+                    
+                    <div class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="project-info">
+        <div class="container">
+            <div class="project-title">
+                Diamonds In-Depth Analysis
+                <a href="https://github.com/kamatmugdha/Diamonds--Project" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+
+            <div class="project-description">
+                <p>Whether it's a rare book or a diamond, something rare and unique is often expensive. In this project, I analyzed the data of various features of 54,000 round-cut diamonds such as most common sizes, colors and cuts to examine what features affect the price of diamonds most. The dataset was obtained from Kaggle and consisted of 10 features as follows</p>
+
+                <h4>Data dictionary</h4>
+
+                <ul>
+                    <li>price: price in US dollars (326−−326−−18,823)</li>
+                    <li>carat: weight of the diamond (0.2--5.01)</li>
+                    <li>cut: quality of the cut (Fair, Good, Very Good, Premium, Ideal)</li>
+                    <li>color: diamond color, from J (worst) to D (best)</li>
+                    <li>clarity: a measurement of how clear the diamond is (I1 (worst), SI2, SI1, VS2, VS1, VVS2, VVS1, IF (best)</li>
+                    <li>x: length in mm (0--10.74)</li>
+                    <li>y: width in mm (0--58.9)</li>
+                    <li>z: depth in mm (0--31.8)</li>
+                    <li>depth: total depth percentage = z / mean(x, y) = 2 * z / (x + y) (43--79)</li>
+                    <li>table: width of top of diamond relative to widest point (43--95)</li>
+                </ul>
+
+                <h4>Data Analysis & Visualization</h4>
+
+                <p>I started by looking at the distribution of the main variable of interest that is price. Price has a long-tailed distribution, with a lot of diamonds on the low-price end, and few on the high price end. When plotted on a log-scale, the price distribution looks roughly bimodal, with one peak between 500 and 1000, and a second peak a little below 5000. Interestingly, there's a steep jump in frequency right before 2000, rather than a smooth ramp up.</p>
+
+                <div class="center-img-grp">
+                    <img src="./img/diamonds-project-img/image3.png" class="large-img"/>
+                    <img src="./img/diamonds-project-img/image4.png" class="large-img"/>
+                </div>
+
+                <div class="half-half">
+                    <img src="./img/diamonds-project-img/image2.png" class="medlarge-img" />
+                    <p>Next, it is very interesting to note here that in the case of carat, the small bin size proves very illuminating. There are large spikes in frequency at the bars with one digit of precision (e.g. 0.3, 0.7, 1.0) and frequency quickly trails off until the next spike. These probably represent standard diamond sizes for use in jewelry.</p>
+                </div>
+
+                <p>Next, I checked the cut, color, and clarity of the diamonds.</p>
+
+                <div class="center-img-grp">
+                    <img src="./img/diamonds-project-img/image6.png" class="xlarge-img"/>
+                    <img src="./img/diamonds-project-img/image10.png" class="medlarge-img"/>
+                </div>
+
+                <p>It is observed that most of the diamonds are of color quality G or better. The cut quality of the diamonds in the dataset is also quite good, with most of them in the Premium or Ideal level.</p>
+
+                <p>Clarity, shows a trend opposite from the other two features, with most of the diamonds on the lower end of the scale, at VS2 or worse. Clarity grades become rarer as steps are taken up the scale.</p>
+
+                <p>When investigating the x, y, and z size variables, lot of outlier points were identified. Overall, these points can be characterized by an inconsistency between the recorded value of depth, and the value that would be derived from using x, y, and z. For the data to be consistent, I decided to remove these outliers for the further analysis.</p>
+
+                <h4>Bivariate Exploration</h4>
+
+                <div class="half-half">
+                    <img src="./img/diamonds-project-img/image9.png" class="medlarge-img" />
+                    <p>As expected, the 'x', 'y', and 'z' dimensions are all highly correlated with one another, and all of them are also highly correlated with carat. Surprisingly, the correlation coefficient between price and carat is very high, despite the fact that price has such a large range of values. This will be worth extra exploration in this section.
+                    </p>
+                </div>
+
+                <div class="half-half">
+                    <p>There doesn't seem to be that much interaction between diamond color and cut, though proportionally it seems like there might be more "Very Good" and "Premium" diamonds on the better color grades (F, E, and D). There are slightly larger interactions on the clarity grades, especially the lower levels of SI2, SI1, and VS2. It looks like there are more Very Good and Premium cut diamonds and more G, F, and E color diamonds compared to higher clarity grades.</p>
+                    <img src="./img/diamonds-project-img/image5.png" class="medlarge-img" />
+                </div>
+
+                <p>With the preliminary look at bivariate relationships out of the way, I want to dig into some of the relationships more. First, I want to see how price and carat are related to one another for all of the data, and to plot price on a log scale.</p>
+
+                <div class="half-half">
+                    <img src="./img/diamonds-project-img/image8.png" class="medlarge-img" />
+                    <p>This plot suggests from the concavity that we might want to also transform the 'carat' variable to see a linear trend. There also appears to be a price ceiling in the data: given the spread of prices for carat values less than 1.5, we'd expect the prices to be more spread out for carat sizes greater than 1.5 and to see diamonds of value higher than $20k.</p>
+                </div>
+
+                <h4>Multivariate Analysis</h4>
+
+                <p>Next, I tried looking at a faceted heat map across two quality dimensions – cut and caret with respect to price, but it seems like there's too many facets to look at. Perhaps a better summary can come from looking at only diamonds of a specific carat size.
+                </p>
+
+                <p> A dodged point plot for diamonds of approximately 1 carat in size shows the clear influence of clarity and cut on diamond price. The larger error bars on the right side are due to there being fewer diamonds at higher clarity grades at this diamond size. There also appear to be fewer diamonds of grade 'Fair' on the higher clarity grades, with none on the highest 'IF' rating.
+                </p>
+                    
+                <div class="center-img-grp">
+                    <img src="./img/diamonds-project-img/image7.png" class="large-img" />
+
+                    <img src="./img/diamonds-project-img/image1.png" class="medlarge-img" />
+                </div>
+
+                <p> The hierarchy in pricing by color is clear when clustered across clarity values. The pattern looks more systematic than the "cut by clarity" pointplots.
+                </p>
+
+                <h4>Summary</h4>
+
+                <p>In the exploration, I found that there was a strong relationship between the price of a diamond and its carat weight, with modifying effects from the cut, color, and clarity grades given to the diamond. I found a somewhat surprising result initially when the marginal trend for the cut, color, and clarity variables indicated that higher diamond quality was associated with lower price. However, higher diamond quality was also associated with smaller diamonds. When I isolated diamonds of a single carat weight, there was a clear positive relationship between higher diamond quality and higher diamond price. I also verified the relationship between diamond carat weight and its x, y, and z dimensions. For the dataset given, there was an interesting interaction in the categorical diamond quality features. The lower clarity grades looked like they had slightly better distribution of cut and color grades than diamonds with the higher clarity grades.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="clr"></div>
+
+    <footer id="main-footer">
+        <p>&copy; 2022, All Rights Reserved</p>
+    </footer>
+
+    <script src="./js/navbar.js"></script>
+</body>
+
+</html>

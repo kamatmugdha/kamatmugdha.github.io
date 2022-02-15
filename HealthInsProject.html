@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mugdha Kamat | Data Analyst | Portfolio Website">
+    <meta name="keywords" content="data analyst,nyc,new york">
+    <script src="https://kit.fontawesome.com/7aecf68a22.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/project-style.css">
+    <title>Mugdha Kamat | Health Insurance Cross-Sell Prediction</title>
+</head>
+
+<body>
+    <header>
+        <div id="nav-container">
+            <div class="container">
+                <nav class="navbar">
+                    <a href="index.html" class="nav-branding">Mugdha Kamat</a>
+                    
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="index.html#timeline" class="nav-link">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.html#skills" class="nav-link">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.html#projects" class="nav-link">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.html#contact-me" class="nav-link">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./docs/Mugdha Kamat Resume.pdf" class="nav-link" target="_blank"><i class="fas fa-download"></i> Resume</a>
+                        </li>
+                    </ul>
+                    
+                    <div class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="project-info">
+        <div class="container">
+            <div class="project-title">
+                Health Insurance Cross-Sell Prediction
+                <a href="https://github.com/kamatmugdha/Health-Insurance-Cross-Sell-Prediction" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+
+            <div class="project-description">
+                <h4>Business Understanding</h4>
+
+                <p>An insurance company offers different types of coverage to its customers. It offers bundle packages, which provides multiple coverage with savings to customers while the company increases customer retention and revenue. A model that predicts whether a customer would be interested in additional coverage is valuable information. This information could enable the company to target the customers that are interested in additional coverage based on demographics, optimizing its business model in terms of customer retention and revenue. In order to capture the customers’ needs, the insurance company must be able to categorize the customers and determine the type of coverage they may be interested in.</p>
+
+                <h4>Business Goals</h4>
+
+                <p>Building a model to predict whether a customer would be interested in Vehicle Insurance is extremely helpful for the company because it can then accordingly plan its communication strategy to reach out to those customers and optimize its business model and revenue.</p>
+
+                <h5>Research Questions</h4>
+
+                <ul>
+                    <li>What are the demographics of the interested customers?</li>
+                    <li>What are the major features that make a health insurance customer interested with vehicle insurance?</li>
+                    <li>What's the best machine Learning modeling for this Cross Sell case?</li>
+                </ul>
+
+                <h4>Workflow</h4>
+
+                <ul>
+                    <li>Data Understanding and Cleaning</li>
+                    <li>Exploratory Data Analysis for the initial insights</li>
+                    <li>Data Preparation</li>
+                    <li>Feature Engineering & Selection for Machine Learning Process</li>
+                    <ul class="inner-list">
+                        <li>Encoding all the categorical features</li>
+                        <li>Feature Selection Model Building</li>
+                    </ul>
+                    
+                    <li>Splitting data into Training and Testing</li>
+                    <li>Applying the SMOTE (Synthetic Minority Oversampling Technique) to the minority target since the data is imbalance</li>
+                    <li>Creating base model of classification algorithm</li>
+                    <li>Check The Evaluation matrix for all the base model
+                    <li>HyperParameter tuning</li>
+                    <li>Checking Evaluation Matrix for tuned Model</li>
+                    <li>Choose which model has the best recall score for this case</li>
+                </ul>
+
+                <h4>Model Insights</h4>
+
+                <p>The usual assumption of older the customer, greater is the possibility of wanting health insurance proved to be wrong here.</p>
+
+                <img src="./img/helth-ins-project-img/AgeVsResponse.png" class="large-img center" />
+
+                <p>Gen X (age group : 30 to 45) seems to be the generation that's most likely to be interested (21%) with vehicle insurance.</p>
+
+                <img src="./img/helth-ins-project-img/VehicleInsuranceVsResponse.png" class="large-img center" />
+
+                <p>Also, the customers without any previous car insurance are more interested in getting health insurance.</p>
+
+                <img src="./img/helth-ins-project-img/CarDamageVsResponse.png" class="large-img center" />
+
+                <p>It was also observed that customers with a previous car damage are more interested in getting the health insurance rather than the ones without any damage.</p>
+
+                <h4>Machine learning performance</h4>
+
+                <p>Among Logistic Regression and Random Forest, the chosen model was Random Forest. Here our focus was on Recall rather than accuracy as we wanted to reduce the False Negatives. The model was also tuned to improve the parameters due to its high recall of 90%.</p>
+
+                <h4>Recommendation</h4>
+                
+                <p>Previously Insured and Vehicle Damage were the significant factors, so customers who had a vehicle damage in the past and had a previous vehicle insurance should be targeted. Using the Random Forest machine learning that has recall of 90% will speed up and evaluate customers who actually are interested in vehicle insurance, so that we could focus our resources only on the interested customers</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="clr"></div>
+
+    <footer id="main-footer">
+        <p>&copy; 2022, All Rights Reserved</p>
+    </footer>
+
+    <script src="./js/navbar.js"></script>
+</body>
+
+</html>
